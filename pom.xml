@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- Template: Source 
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- Template: Source
 	+ GWT + in workspace dependencies 27.11.2010 --><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<groupId>org.javadelight</groupId>
 	<artifactId>delight-rhino-sandbox</artifactId>
-	<version>0.0.9</version>
+	<version>0.0.10</version>
 	<description>A safe sandbox for running JavaScript using the Rhino Engine in Java.</description>
 	<url>https://github.com/javadelight/delight-rhino-sandbox</url>
-	
+
 	<properties>
 		<module.importedPackages>
 			*
@@ -18,23 +18,23 @@
 
 	<!-- Dependent Modules -->
 	<dependencies>
-		
+
 		<dependency>
 			<groupId>org.mozilla</groupId>
 			<artifactId>rhino</artifactId>
-			<version>1.7.7.2</version>
+			<version>1.7.10</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.eclipse.xtend</groupId>
-			<artifactId>org.eclipse.xtend.lib.gwt</artifactId>
-			<version>2.13.0</version>
+			<artifactId>org.eclipse.xtend.lib</artifactId>
+			<version>2.16.0</version>
 		</dependency>
 
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.7</version>
+			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
 
@@ -53,9 +53,10 @@
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.0</version>
 				<configuration>
-					<source>1.6</source>
-					<target>1.6</target>
+					<source>1.8</source>
+					<target>1.8</target>
 				</configuration>
 			</plugin>
 
@@ -76,12 +77,12 @@
 						<Export-Package>${module.exportedPackages}</Export-Package>
 						<Service-Component>${module.serviceDefinitions}
 						</Service-Component>
-						<Bundle-RequiredExecutionEnvironment>JavaSE-1.6
+						<Bundle-RequiredExecutionEnvironment>JavaSE-1.8
 						</Bundle-RequiredExecutionEnvironment>
 					</instructions>
 				</configuration>
 			</plugin>
-			
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-source-plugin</artifactId>
@@ -99,7 +100,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>2.10.4</version>
+				<version>3.0.1</version>
 				<executions>
 					<execution>
 						<id>attach-javadocs</id>
@@ -115,7 +116,7 @@
 
 
 
-			<!-- Keep the MANIFEST.MF used by eclipse in sync with the MANIFEST.MF 
+			<!-- Keep the MANIFEST.MF used by eclipse in sync with the MANIFEST.MF
 				created by the maven bundle plugin -->
 			<plugin>
 				<artifactId>maven-antrun-plugin</artifactId>
@@ -266,10 +267,10 @@
 				</includes>
 			</resource>
 
-			<!-- This entry makes sure that resources, which lie in the same package 
-				as Java classes, are copied into the target. Often external libraries require 
-				resources, which are loaded using Class.getResource or Class.getResourceAsStream 
-				and which are in a subpackage of the class. For instance, the NetBeans template 
+			<!-- This entry makes sure that resources, which lie in the same package
+				as Java classes, are copied into the target. Often external libraries require
+				resources, which are loaded using Class.getResource or Class.getResourceAsStream
+				and which are in a subpackage of the class. For instance, the NetBeans template
 				for the Swing Application Framework does so. -->
 			<resource>
 				<filtering>false</filtering>
@@ -286,16 +287,16 @@
 
 		</resources>
 
-		
+
 	</build>
-	
+
 	<scm>
 		<connection>scm:git:git@github.com:javadelight/delight-rhino-sandbox.git</connection>
 		<url>https://github.com/javadelight/delight-rhino-sandbox</url>
 		<developerConnection>scm:git:git@github.com:javadelight/delight-rhino-sandbox.git
 		</developerConnection>
 	</scm>
-	
+
 	<distributionManagement>
 		<repository>
 			<id>bintray-javadelight-javadelight</id>
@@ -319,7 +320,7 @@
 			<organizationUrl>http://pureleap.com</organizationUrl>
 		</developer>
 	</developers>
-	
+
 	<licenses>
 		<license>
 			<name>The Apache License, Version 2.0</name>
@@ -334,7 +335,7 @@
 			<url>https://www.gnu.org/licenses/gpl-3.0.en.html</url>
 		</license>
 	</licenses>
-	
+
 
 
 
